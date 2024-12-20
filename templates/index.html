@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода по маршруту</title>
+    <script>
+        function addCityField() {
+            const newDiv = document.createElement('div');
+            newDiv.className = 'city-field';
+
+            const label = document.createElement('label');
+            label.innerText = 'Промежуточная точка:';
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'intermediate_city'; // Имя для передачи на сервер
+            input.required = true;
+
+            newDiv.appendChild(label);
+            newDiv.appendChild(input);
+
+            document.getElementById('cities').appendChild(newDiv);
+        }
+    </script>
+</head>
+<body>
+    <h1>Введите начальную и конечную точки маршрута</h1>
+    <form method="POST">
+        <label for="start_city">Начальная точка:</label>
+        <input type="text" id="start_city" name="start_city" required>
+        <br>
+
+        <label for="end_city">Конечная точка:</label>
+        <input type="text" id="end_city" name="end_city" required>
+        <br>
+
+        <!-- Контейнер для промежуточных городов -->
+        <div id="cities"></div>
+
+        <!-- Кнопка для добавления промежуточного города -->
+        <button type="button" onclick="addCityField()">Добавить промежуточный город</button>
+
+        <br><br>
+
+        <!-- Выбор количества дней -->
+        <label for="days">Выберите количество дней прогноза:</label>
+        <select id="days" name="days">
+            <option value="1">1 день</option>
+            <option value="5">5 дней</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Получить погоду</button>
+    </form>
+</body>
+</html>

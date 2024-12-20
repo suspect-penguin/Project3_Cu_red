@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты погоды</title>
+</head>
+<body>
+    <h1>Результаты погоды</h1>
+
+    <h2>Начальная точка: {{ start_city }}</h2>
+    <p>Температура: {{ start_temperature }} °C</p>
+    <p>Скорость ветра: {{ start_wind_speed }} км/ч</p>
+    <p>Вероятность осадков: {{ start_precipitation_probability }}%</p>
+    <p>Погодные условия: {{ start_weather_condition }}</p>
+
+    <h2>Конечная точка: {{ end_city }}</h2>
+    <p>Температура: {{ end_temperature }} °C</p>
+    <p>Скорость ветра: {{ end_wind_speed }} км/ч</p>
+    <p>Вероятность осадков: {{ end_precipitation_probability }}%</p>
+    <p>Погодные условия: {{ end_weather_condition }}</p>
+
+    <a href="/">Назад</a>
+</body>
+</html>
